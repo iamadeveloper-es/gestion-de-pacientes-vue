@@ -65,4 +65,16 @@ export default {
 .bottom-menu{
     padding: 15px 0;
 }
+.click-icon{
+    cursor: pointer;
+    font-size: 24px;
+    color: $dirtyWhite;
+    transition: all .2s ease-in-out;
+    &:nth-child(odd){
+        margin-right: 15px;
+    }
+    &.active{
+        color:  $turquoise;
+    }
+}
 </style>
