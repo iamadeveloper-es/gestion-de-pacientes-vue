@@ -14,6 +14,21 @@ Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
 Vue.use(BootstrapVue)
 
+//Filters
+Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+
+Vue.filter('first-char', function(value){
+  return value.charAt(0)
+})
+Vue.filter('uppercase', function(value){
+  return value.toUpperCase()
+})
+
+
 new Vue({
   router,
   store,
