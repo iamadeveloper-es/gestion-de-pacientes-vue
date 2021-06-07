@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+.medium-grey{
+    color: $mediumdirtyWhite;
+}
+.bg-warning{
+    background-color: $warning;
+}
+.bg-danger{
+    background-color: $danger;
+}
+.bg-success{
+    background-color: $success;
+}
+.bg-primary-blue{
+    background-color: $primaryBlue;
+}
+p{
+    font-size: 16px;
+}
+.display_4{
+    font-size: 18px;
+}
+
+.line-height-22{
+    line-height: 22px;
+}
+
+
+@media screen and(min-width:992px){
+    .flex-container{
+        flex-direction: row;
+    }
+}
