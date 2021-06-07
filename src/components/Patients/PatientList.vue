@@ -13,6 +13,11 @@
         </b-col>
       </b-row>
     </b-container>
+    <patient-bottom-menu
+    :title="'Selecciona el modo de vista'"
+    @viewOptList="changeviewOpt($event)"
+    @viewOptCard="changeviewOpt($event)"
+    ></patient-bottom-menu>
       <b-container>
           <b-row v-if="getPatientList">
             <single-patient
@@ -30,13 +35,20 @@
 <script>
 import SearchBar from '../UI/SearchBar.vue'
 import SinglePatient from './SinglePatient.vue'
+import PatientBottomMenu from './PatientBottomMenu.vue'
 export default {
-  components: { SinglePatient, SearchBar },
+  components: { SinglePatient, SearchBar, PatientBottomMenu },
     name: 'PatientList',
     data(){
       return{
-        inptValue: ''
+        inptValue: '',
+        viewOpt: false
       }
+    },
+    methods:{
+      changeviewOpt(ev){
+        this.viewOpt = ev
+      },
     },
     computed:{
         filterPatient(){
