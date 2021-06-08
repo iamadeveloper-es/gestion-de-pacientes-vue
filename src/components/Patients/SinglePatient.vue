@@ -122,7 +122,7 @@ export default {
       patientDetail(index, ev){
         let target = ev.target.getAttribute('class')
         if(target != 'form_select'){
-          this.$router.push({ name: 'Patient', params: { patientId: index } })
+          this.$router.push({ name: 'DetailPatientView', params: { id: index } })
         }
         else{
           return
