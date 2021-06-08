@@ -3,13 +3,25 @@
     <title-component
       :title="'Listado de Pacientes'"
     ></title-component>
-    <b-container>
-      <b-row>
-        <b-col>
-
+    <b-container class="mb-3">
+      <b-row class="align-items-center">
+        <b-col cols="12" lg="3" class="mb-4 mb-lg-0">
+          <button-component
+          :text="'Nuevo Paciente'"
+          :type="['btn-lg', 'outline-turquoise']"
+          >
+          </button-component>
         </b-col>
-        <b-col>
+        <b-col cols="12" lg="3" class="mb-4 mb-lg-0">
+          <button-component
+          :text="'Descargar CSV'"
+          :type="['btn-lg', 'outline-turquoise']"
+          >
+          </button-component>
+        </b-col>
+        <b-col cols="12" lg="6">
           <search-bar
+          :placeholderText="'...Buscar'"
           @SearchItem="inptValue = $event"
           >
           </search-bar>
@@ -40,8 +52,9 @@ import SearchBar from '../UI/SearchBar.vue'
 import SinglePatient from './SinglePatient.vue'
 import PatientBottomMenu from './PatientBottomMenu.vue'
 import TitleComponent from '../UI/TitleComponent.vue'
+import ButtonComponent from '../UI/ButtonComponent.vue'
 export default {
-  components: { SinglePatient, SearchBar, PatientBottomMenu, TitleComponent },
+  components: { SinglePatient, SearchBar, PatientBottomMenu, TitleComponent,  ButtonComponent  },
     name: 'PatientList',
     data(){
       return{

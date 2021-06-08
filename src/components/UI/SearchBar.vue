@@ -3,7 +3,7 @@
       <input 
         class="form_input"
         type="text"
-        placeholder="... Buscar"
+        :placeholder="placeholderText"
         v-model="search"
         @keyup="seachItem($event)"
         >
@@ -13,6 +13,9 @@
 <script>
 export default {
     name: 'SearchBar',
+    props:{
+      placeholderText: String
+    },
     data(){
       return{
         search: ''
