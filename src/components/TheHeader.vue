@@ -25,5 +25,9 @@ export default {
 .header{
     background-color: $turquoise;
     padding: 15px 0;
+    box-shadow: 2px 0px 6px rgba(122, 122, 122, .8);
+    z-index: 90;
+    position: sticky;
+    top: 0;
 }
 </style>

@@ -6,7 +6,7 @@
           :key="route.url"
           >
               <router-link
-              :class="'nav-link'"
+              :class="'nav_link'"
               :to="route.url"
               >
               {{ route.pathName }}
@@ -39,8 +39,11 @@ export default {
         padding: 0;
         margin: 0;
     }
-    .nav-link{
+    .nav_link{
         color: $white;
+        text-decoration: none;
+        padding: 10px;
+        display: inline-block;
     }
 }
 </style>

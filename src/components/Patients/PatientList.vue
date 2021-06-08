@@ -1,5 +1,8 @@
 <template>
   <div>
+    <title-component
+      :title="'Listado de Pacientes'"
+    ></title-component>
     <b-container>
       <b-row>
         <b-col>
@@ -36,8 +39,9 @@
 import SearchBar from '../UI/SearchBar.vue'
 import SinglePatient from './SinglePatient.vue'
 import PatientBottomMenu from './PatientBottomMenu.vue'
+import TitleComponent from '../UI/TitleComponent.vue'
 export default {
-  components: { SinglePatient, SearchBar, PatientBottomMenu },
+  components: { SinglePatient, SearchBar, PatientBottomMenu, TitleComponent },
     name: 'PatientList',
     data(){
       return{
