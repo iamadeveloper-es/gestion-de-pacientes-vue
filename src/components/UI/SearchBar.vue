@@ -1,7 +1,9 @@
 <template>
   <div class="search-bar">
       <input 
+        class="form_input"
         type="text"
+        placeholder="... Buscar"
         v-model="search"
         @keyup="seachItem($event)"
         >
@@ -24,6 +26,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.form_input{
+  background-color: $lightWhite;
+}
 </style>
