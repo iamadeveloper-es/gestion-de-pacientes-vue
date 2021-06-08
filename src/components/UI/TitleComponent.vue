@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .title-component{
-    padding: 15px 0;
+    padding: 25px 0;
     background-color: $lightWhite;
     margin-bottom: 40px;
     .title{
