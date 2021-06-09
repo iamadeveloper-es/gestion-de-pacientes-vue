@@ -9,8 +9,11 @@ body{
     display: flex;
     flex-direction: column;
 }
-.medium-grey{
+.cl-medium-grey{
     color: $mediumdirtyWhite;
+}
+.cl-darkblue{
+    color: $darkBlue;
 }
 .bg-warning{
     background-color: $warning;

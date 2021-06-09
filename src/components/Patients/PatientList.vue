@@ -16,6 +16,7 @@
           <button-component
           :text="'Descargar CSV'"
           :type="['btn-lg', 'outline-turquoise']"
+          @CustomClick="downloadCSV()"
           >
           </button-component>
         </b-col>
@@ -48,6 +49,7 @@
 </template>
 
 <script>
+import jsonToCsv from '../../helpers/jsonToCsv.js'
 import SearchBar from '../UI/SearchBar.vue'
 import SinglePatient from './SinglePatient.vue'
 import PatientBottomMenu from './PatientBottomMenu.vue'
@@ -66,6 +68,10 @@ export default {
       changeviewOpt(ev){
         this.viewOpt = ev
       },
+      downloadCSV(){
+        jsonToCsv.setCSVPatients(this.$store.state.patients)
+      }
+      
     },
     computed:{
         filterPatient(){

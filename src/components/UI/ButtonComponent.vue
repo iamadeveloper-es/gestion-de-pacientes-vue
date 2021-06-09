@@ -55,7 +55,7 @@ export default {
     &.outline-turquoise{
         background-color: $white;
         border: 2px solid $turquoise;
-        color: currentColor;
+        color: $turquoise;
     }
 }
 </style>

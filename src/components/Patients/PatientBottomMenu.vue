@@ -6,7 +6,7 @@
           <h2 class="line-height-22 mb-3">
             {{ title }}<br />
             <span
-              class="medium-grey display_4"
+              class="cl-medium-grey display_4"
               v-if="isViewOpt ? (textOpt = 'Tarjetas') : (textOpt = 'Listado')"
               >{{ textOpt }}</span
             >

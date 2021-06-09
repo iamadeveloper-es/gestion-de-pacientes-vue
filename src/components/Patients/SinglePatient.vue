@@ -24,7 +24,7 @@
                     `${patient.datos_paciente.nombre} ${patient.datos_paciente.apellidos}`
                   }}
                 </span>
-                <span class="patient-bday medium-grey d-block">
+                <span class="patient-bday cl-medium-grey d-block">
                   <span class="far fa-calendar-alt"></span>
                   {{ patient.datos_paciente.fecha_nacimiento }}
                 </span>
