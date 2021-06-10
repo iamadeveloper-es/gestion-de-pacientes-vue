@@ -1,7 +1,7 @@
 <template>
   <div class="custom-modal"
-    v-show="isModal"
-    :class="isModal ? modalClass = 'custom-modal-open' : modalClass = ''"
+    v-show="isModalOpen"
+    :class="isModalOpen ? modalClass = 'custom-modal-open' : modalClass = ''"
     @click="closeModal($event)"
   >
     <div class="custom-modal-wrapper">
@@ -28,18 +28,15 @@
 <script>
 export default {
     name: 'ModalComponent',
+    props: ['isModalOpen'],
     data(){
         return{
-            isModal: false,
             modalClass: ''
         }
     },
     methods:{
-        open(){
-            this.isModal = true
-        },
         close(){
-            this.isModal = false
+            this.$emit('ModalClose')
         },
         closeModal(ev){
             let target = ev.target

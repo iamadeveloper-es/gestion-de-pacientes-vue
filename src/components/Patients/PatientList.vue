@@ -9,7 +9,7 @@
           <button-component
           :text="'Nuevo Paciente'"
           :type="['btn-lg', 'outline-turquoise']"
-          @CustomClick="openModal()"
+          @CustomClick="modalAction()"
           >
           </button-component>
         </b-col>
@@ -48,6 +48,8 @@
       </b-container>
       <modal-component
       ref="modalnewpatient"
+      :isModalOpen="isModalOpen"
+      @ModalClose="modalAction()"
       >
       <div slot="header">
         <h4>Nuevo Paciente</h4>
@@ -77,7 +79,8 @@ export default {
       return{
         inptValue: '',
         viewOpt: false,
-        formData: {}
+        formData: {},
+        isModalOpen: false
       }
     },
     methods:{
@@ -88,11 +91,15 @@ export default {
         jsonToCsv.setCSVPatients(this.$store.state.patients)
       },
       openModal(){
-        this.$refs.modalnewpatient.open()
+        //this.$refs.modalnewpatient.open()
+        this.isModal = true
       },
       newPatient(ev){
         this.formData = ev
         console.log('formData', ev)
+      },
+      modalAction(){
+        this.isModalOpen = !this.isModalOpen
       }
       
     },
