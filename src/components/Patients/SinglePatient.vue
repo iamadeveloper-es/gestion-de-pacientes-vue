@@ -175,6 +175,9 @@ export default {
       color: white;
     }
   }
+  .form_select{
+    max-width: 120px;
+  }
   &.list {
     margin-bottom: 5px;
     .grid-container {

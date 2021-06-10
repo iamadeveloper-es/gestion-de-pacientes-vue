@@ -1,6 +1,5 @@
 .form_select{
     width: 100%;
-    max-width: 120px;
     padding: 8px;
     background-color: $white;
     border: 1px solid $dirtyWhite;
@@ -14,7 +13,7 @@
     border-radius: 5px;
     border: 1px solid $dirtyWhite;
 }
-.form-group{
+.form_group{
     margin: 15px 0;
 }
 .form{
@@ -30,4 +29,11 @@
     .custom-checkbox label{
         margin-left: 15px;
     }
+}
+.label-title{
+    display: block;
+}
+.label-padding{
+    padding-left: 10px;
+    padding-right: 10px;
 }

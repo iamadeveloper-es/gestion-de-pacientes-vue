@@ -9,6 +9,7 @@
           <button-component
           :text="'Nuevo Paciente'"
           :type="['btn-lg', 'outline-turquoise']"
+          @CustomClick="openModal()"
           >
           </button-component>
         </b-col>
@@ -45,6 +46,18 @@
             ></single-patient>
           </b-row>
       </b-container>
+      <modal-component
+      ref="modalnewpatient"
+      >
+      <div slot="header">
+        <h4>Nuevo Paciente</h4>
+      </div>
+      <div slot="body">
+        <new-patient-form
+        @Submit="newPatient($event)"
+        ></new-patient-form>
+      </div>
+      </modal-component>
   </div>
 </template>
 
@@ -55,13 +68,16 @@ import SinglePatient from './SinglePatient.vue'
 import PatientBottomMenu from './PatientBottomMenu.vue'
 import TitleComponent from '../UI/TitleComponent.vue'
 import ButtonComponent from '../UI/ButtonComponent.vue'
+import ModalComponent from '../UI/ModalComponent.vue'
+import NewPatientForm from './NewPatientForm.vue'
 export default {
-  components: { SinglePatient, SearchBar, PatientBottomMenu, TitleComponent,  ButtonComponent  },
+  components: { SinglePatient, SearchBar, PatientBottomMenu, TitleComponent,  ButtonComponent, ModalComponent, NewPatientForm },
     name: 'PatientList',
     data(){
       return{
         inptValue: '',
-        viewOpt: false
+        viewOpt: false,
+        formData: {}
       }
     },
     methods:{
@@ -70,6 +86,13 @@ export default {
       },
       downloadCSV(){
         jsonToCsv.setCSVPatients(this.$store.state.patients)
+      },
+      openModal(){
+        this.$refs.modalnewpatient.open()
+      },
+      newPatient(ev){
+        this.formData = ev
+        console.log('formData', ev)
       }
       
     },

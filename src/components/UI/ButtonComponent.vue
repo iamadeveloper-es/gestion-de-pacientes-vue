@@ -1,6 +1,7 @@
 <template>
     <button 
         class="btn-custom"
+        :type="btnType"
         :class="type"
         :disabled="disabled"
         @click="callBack($event)"
@@ -15,6 +16,7 @@ export default {
     props:{
         text: String,
         type: Array,
+        btnType: String,
         disabled: String
     },
     methods:{
@@ -49,7 +51,7 @@ export default {
         color: $white;
     }
     &.btn-warning{
-        background-color: $danger;
+        background-color: $warning;
         color: $white;
     }
     &.outline-turquoise{
