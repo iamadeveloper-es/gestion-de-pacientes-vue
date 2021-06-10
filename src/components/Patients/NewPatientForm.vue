@@ -25,7 +25,7 @@
     </div>
     <div class="form_group">
         <select name="objetive" id="objetive" class="form_select" required v-model="formData.ficha_dental.objetivo_tratamiento">
-            <option value="" disabled hidden>Objetivo del Tratamiento</option>
+            <option value="" hidden>Objetivo del Tratamiento</option>
             <option value="Estética y Oclusión">Estética y Oclusión</option>
             <option value="Estética">Estética</option>
         </select>
@@ -48,13 +48,19 @@
     </div>
     <button-component
         :btnType="'submit'"
-        :type="['btn-success']"
+        :type="['btn-success btn-md']"
         :text="'Crear'"
     ></button-component>
     <button-component
         :btnType="'reset'"
-        :type="['btn-warning']"
+        :type="['btn-warning btn-md']"
         :text="'Limpiar'"
+    ></button-component>
+    <button-component
+        :btnType="'button'"
+        :type="['btn-danger btn-md']"
+        :text="'Cancelar'"
+        @CustomClick="modalAction()"
     ></button-component>
   </form>
 </template>
@@ -89,6 +95,9 @@ export default {
         submit(){
             this.$emit('Submit', this.formData)
         },
+        modalAction(){
+            this.$emit('ModalClose')
+        }
         /* cleanForm(data){
             for(let obj in data){
                 Object.values(obj[data]) = ''

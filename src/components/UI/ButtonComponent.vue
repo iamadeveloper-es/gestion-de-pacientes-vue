@@ -34,6 +34,7 @@ export default {
     border: none;
     display: inline-block;
     text-align: center;
+    font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
     &.btn-md{

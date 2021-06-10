@@ -57,6 +57,7 @@
       <div slot="body">
         <new-patient-form
         @Submit="newPatient($event)"
+        @ModalClose="modalAction()"
         ></new-patient-form>
       </div>
       </modal-component>

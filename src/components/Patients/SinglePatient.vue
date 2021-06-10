@@ -43,12 +43,10 @@
           </span>
         </div>
         <div class="grid-item">
-          <span
-          class="state"
-          :class="stateClass"
+          <patient-state
+          :patient="patient"
           >
-              {{ patient.ficha_dental.estado | capitalize }}
-          </span>
+          </patient-state>
         </div>
         <div class="grid-item">
           <select id="" class="form_select"
@@ -71,7 +69,9 @@
 </template>
 
 <script>
+import PatientState from './PatientState.vue';
 export default {
+  components: { PatientState },
   name: "PatientSingle",
   props: ["patient", "viewOpt", "index"],
   data() {
@@ -83,28 +83,9 @@ export default {
         { value: "Borrar" }
       ],
       actionSelected: '',
-      stateClass: ''
     }
   },
   methods:{
-      setStateClass(){
-          const state = this.patient.ficha_dental.estado
-          const stateLower = state.toLowerCase()
-          switch (stateLower) {
-              case 'planificando':
-                  this.stateClass = 'bg-warning'
-                  break;
-            case 'facturado':
-                  this.stateClass = 'bg-danger'
-                  break;
-            case 'solicitado':
-                  this.stateClass = 'bg-primary-blue'
-                  break;
-            case 'enviado':
-                  this.stateClass = 'bg-success'
-                  break;
-          }
-      },
       action(){
         switch (this.actionSelected) {
           case 'editar':
@@ -129,9 +110,6 @@ export default {
         }
       }
   },
-  mounted(){
-      this.setStateClass()
-  }
 };
 </script>
 
@@ -147,6 +125,7 @@ export default {
 .patient {
   border: 1px solid $dirtyWhite;
   border-radius: 3px;
+  cursor: pointer;
   .patient-img {
     overflow: hidden;
     position: relative;
@@ -224,13 +203,6 @@ export default {
     }
   }
 }
-.state{
-    display: inline-block;
-    padding: 9px 7px;
-    min-width: 110px;
-    border-radius: 25px;
-    color: $white;
-}
 @media screen and(min-width: 758px) {
   .patient {
     &.list {
@@ -244,7 +216,7 @@ export default {
     }
   }
 }
-@media screen and(min-width: 992px){
+@media screen and(min-width: $lg){
     .patient {
         transition: all .2s ease-in-out;
         &:hover{
@@ -261,9 +233,6 @@ export default {
                 margin: 0;
             }
         }
-    }
-    .state{
-        min-width: 150px;
     }
 }
 </style>
