@@ -21,8 +21,8 @@ export default {
     methods:{
         setStateClass(){
           const state = this.patient.ficha_dental.estado
-          const stateLower = state.toLowerCase()
-          switch (stateLower) {
+          const stateToLower = state.toLowerCase()
+          switch (stateToLower) {
               case 'planificando':
                   this.stateClass = 'bg-warning'
                   break;
@@ -47,6 +47,7 @@ export default {
 <style lang="scss" scoped>
     .state{
         display: inline-block;
+        text-align: center;
         padding: 9px 7px;
         min-width: 110px;
         border-radius: 25px;
